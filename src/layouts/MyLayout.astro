@@ -2,10 +2,8 @@
 interface Props {
   title: string;
   description: string;
-  publishDate: string;
-  viewCount: number;
 }
-const { title, description, publishDate, viewCount } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -15,12 +13,6 @@ const { title, description, publishDate, viewCount } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <p>Published on {publishDate}</p>
-      <p>Viewed by {viewCount} folks</p>
-    </header>
-    <main>
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>
