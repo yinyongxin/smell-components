@@ -25,6 +25,9 @@ importers:
       astro:
         specifier: ^5.12.8
         version: 5.12.8(@types/node@24.2.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.0)
+      normalize.css:
+        specifier: ^8.0.1
+        version: 8.0.1
       preact:
         specifier: ^10.27.0
         version: 10.27.0
@@ -3029,6 +3032,12 @@ packages:
         integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==,
       }
     engines: { node: ">=0.10.0" }
+
+  normalize.css@8.0.1:
+    resolution:
+      {
+        integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==,
+      }
 
   npm-run-path@6.0.0:
     resolution:
@@ -6483,6 +6492,8 @@ snapshots:
   node-releases@2.0.19: {}
 
   normalize-path@3.0.0: {}
+
+  normalize.css@8.0.1: {}
 
   npm-run-path@6.0.0:
     dependencies:
