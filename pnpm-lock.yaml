@@ -16,6 +16,9 @@ importers:
       "@astrojs/solid-js":
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.2.0)(solid-js@1.9.7)(yaml@2.8.0)
+      "@astrojs/ts-plugin":
+        specifier: ^1.10.4
+        version: 1.10.4
       "@astrojs/vue":
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.2.0)(astro@5.12.8(@types/node@24.2.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.0))(rollup@4.46.2)(vue@3.5.18(typescript@5.9.2))(yaml@2.8.0)
@@ -119,6 +122,12 @@ packages:
       }
     engines: { node: 18.20.8 || ^20.3.0 || >=22.0.0 }
 
+  "@astrojs/ts-plugin@1.10.4":
+    resolution:
+      {
+        integrity: sha512-rapryQINgv5VLZF884R/wmgX3mM9eH1PC/I3kkPV9rP6lEWrRN1YClF3bGcDHFrf8EtTLc0Wqxne1Uetpevozg==,
+      }
+
   "@astrojs/vue@5.1.0":
     resolution:
       {
@@ -128,6 +137,12 @@ packages:
     peerDependencies:
       astro: ^5.0.0
       vue: ^3.2.30
+
+  "@astrojs/yaml2ts@0.2.2":
+    resolution:
+      {
+        integrity: sha512-GOfvSr5Nqy2z5XiwqTouBBpy5FyI6DEe+/g/Mk5am9SjILN1S5fOEvYK0GuWHg98yS/dobP4m8qyqw/URW35fQ==,
+      }
 
   "@babel/code-frame@7.27.1":
     resolution:
@@ -1254,6 +1269,24 @@ packages:
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
+
+  "@volar/language-core@2.4.22":
+    resolution:
+      {
+        integrity: sha512-gp4M7Di5KgNyIyO903wTClYBavRt6UyFNpc5LWfyZr1lBsTUY+QrVZfmbNF2aCyfklBOVk9YC4p+zkwoyT7ECg==,
+      }
+
+  "@volar/source-map@2.4.22":
+    resolution:
+      {
+        integrity: sha512-L2nVr/1vei0xKRgO2tYVXtJYd09HTRjaZi418e85Q+QdbbqA8h7bBjfNyPPSsjnrOO4l4kaAo78c8SQUAdHvgA==,
+      }
+
+  "@volar/typescript@2.4.22":
+    resolution:
+      {
+        integrity: sha512-6ZczlJW1/GWTrNnkmZxJp4qyBt/SGVlcTuCWpI5zLrdPdCZsj66Aff9ZsfFaT3TyjG8zVYgBMYPuCm/eRkpcpQ==,
+      }
 
   "@vue/babel-helper-vue-transform-on@1.4.0":
     resolution:
@@ -3106,6 +3139,12 @@ packages:
         integrity: sha512-IInvU7fabl34qmi9gY8XOVxhYyMyuH2xUNpb2q8/Y+7552KlejkRvqvD19nMoUW/uQGGbqNpA6Tufu5FL5BZgw==,
       }
 
+  path-browserify@1.0.1:
+    resolution:
+      {
+        integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==,
+      }
+
   path-key@3.1.1:
     resolution:
       {
@@ -4045,6 +4084,18 @@ packages:
       vite:
         optional: true
 
+  vscode-languageserver-textdocument@1.0.12:
+    resolution:
+      {
+        integrity: sha512-cxWNPesCnQCcMPeenjKKsOCKQZ/L6Tv19DTRIGuLWe32lyzWhihGVJ/rcckZXJxfdKCFvRLS3fpBIsV/ZGX4zA==,
+      }
+
+  vscode-uri@3.1.0:
+    resolution:
+      {
+        integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==,
+      }
+
   vue@3.5.18:
     resolution:
       {
@@ -4302,6 +4353,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  "@astrojs/ts-plugin@1.10.4":
+    dependencies:
+      "@astrojs/compiler": 2.12.2
+      "@astrojs/yaml2ts": 0.2.2
+      "@jridgewell/sourcemap-codec": 1.5.4
+      "@volar/language-core": 2.4.22
+      "@volar/typescript": 2.4.22
+      semver: 7.7.2
+      vscode-languageserver-textdocument: 1.0.12
+
   "@astrojs/vue@5.1.0(@types/node@24.2.0)(astro@5.12.8(@types/node@24.2.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.0))(rollup@4.46.2)(vue@3.5.18(typescript@5.9.2))(yaml@2.8.0)":
     dependencies:
       "@vitejs/plugin-vue": 5.2.1(vite@6.3.5(@types/node@24.2.0)(yaml@2.8.0))(vue@3.5.18(typescript@5.9.2))
@@ -4326,6 +4387,10 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  "@astrojs/yaml2ts@0.2.2":
+    dependencies:
+      yaml: 2.8.0
 
   "@babel/code-frame@7.27.1":
     dependencies:
@@ -4989,6 +5054,18 @@ snapshots:
     dependencies:
       vite: 6.3.5(@types/node@24.2.0)(yaml@2.8.0)
       vue: 3.5.18(typescript@5.9.2)
+
+  "@volar/language-core@2.4.22":
+    dependencies:
+      "@volar/source-map": 2.4.22
+
+  "@volar/source-map@2.4.22": {}
+
+  "@volar/typescript@2.4.22":
+    dependencies:
+      "@volar/language-core": 2.4.22
+      path-browserify: 1.0.1
+      vscode-uri: 3.1.0
 
   "@vue/babel-helper-vue-transform-on@1.4.0": {}
 
@@ -6483,6 +6560,8 @@ snapshots:
     dependencies:
       entities: 6.0.1
 
+  path-browserify@1.0.1: {}
+
   path-key@3.1.1: {}
 
   path-key@4.0.0: {}
@@ -7104,6 +7183,10 @@ snapshots:
   vitefu@1.1.1(vite@6.3.5(@types/node@24.2.0)(yaml@2.8.0)):
     optionalDependencies:
       vite: 6.3.5(@types/node@24.2.0)(yaml@2.8.0)
+
+  vscode-languageserver-textdocument@1.0.12: {}
+
+  vscode-uri@3.1.0: {}
 
   vue@3.5.18(typescript@5.9.2):
     dependencies:
