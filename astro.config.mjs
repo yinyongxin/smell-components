@@ -7,6 +7,8 @@ import solidJs from "@astrojs/solid-js";
 
 import vue from "@astrojs/vue";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -17,5 +19,6 @@ export default defineConfig({
       include: ["**/solid/*"],
     }),
     vue(),
+    mdx(),
   ],
 });
