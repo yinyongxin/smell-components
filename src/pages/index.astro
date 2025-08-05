@@ -1,9 +1,12 @@
 ---
-import Button from "@components/preact/Button/Button";
+import Button from "@src/components/Button/preact/Button/Button";
 import MyLayout from "@layouts/MyLayout.astro";
 ---
 
 <MyLayout title="首页" description="功能">
-    <div class="text-red">Astro Home</div>
-    <Button client:load>按钮</Button>
+  <div class="text-red">啊sass啊</div>
+  <Button>按钮</Button>
+  <Button status="primary">按钮</Button>
+  <Button status="secondary">按钮</Button>
+  <Button status="danger">按钮</Button>
 </MyLayout>

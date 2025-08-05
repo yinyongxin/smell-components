@@ -7,11 +7,21 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    { 'i-logo': 'i-logos-astro w-6em h-6em transform transition-800' },
   ],
   transformers: [
     transformerDirectives(),
   ],
+  theme:{
+    colors: {
+      default: '#ffffff',
+      primary: 'hsl(var(--hue, 217) 78% 51%)',
+      secondary: '#ff0000',
+      danger: '#ff0000',
+      warning: '#ffff00',
+      success: '#00ff00',
+    },
+    
+  },
   presets: [
     presetWind3(),
     presetIcons({

@@ -1,1 +1,3 @@
-export type Status  = 'primary' | 'secondary' | 'danger' | 'warning' | 'success' | 'default'
+export type Status  = 'default' | 'danger' | 'warning' | 'success' 
+
+export type ButtonType =   'primary' | 'secondary'
