@@ -9,6 +9,8 @@ import vue from "@astrojs/vue";
 // @ts-ignore
 import mdx from "@astrojs/mdx";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -21,4 +23,8 @@ export default defineConfig({
     vue(),
     mdx(),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
