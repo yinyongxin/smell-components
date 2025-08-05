@@ -1,15 +1,15 @@
 ---
-import type {ThemeType} from '@src/typings'
-import 'normalize.css'
-import '@src/styles/global.css'
-import '@src/styles/theme.css'
+import type { ThemeType } from "@src/typings";
+import "normalize.css";
+import "@src/styles/global.css";
+import "@src/styles/theme.css";
 
 interface Props {
   title: string;
   description: string;
-  theme?: ThemeType
+  theme?: ThemeType;
 }
-const { title, description, theme='light' } = Astro.props;
+const { title, description, theme = "dark" } = Astro.props;
 ---
 
 <html lang="zh-cn" data-theme={theme}>
@@ -18,7 +18,7 @@ const { title, description, theme='light' } = Astro.props;
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="bg-white dark:bg-black">
+  <body>
     <slot />
   </body>
 </html>

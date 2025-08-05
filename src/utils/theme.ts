@@ -5,5 +5,5 @@ export const toggleTheme = () => {
   const newTheme = currentTheme === "light" ? "dark" : "light";
   document.documentElement.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
-  return newTheme as ThemeType
+  return newTheme as ThemeType;
 };
