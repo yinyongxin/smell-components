@@ -1,12 +1,11 @@
 ---
 import Button from "@src/components/Button/preact/Button";
-import MyLayout from "@layouts/MyLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<MyLayout title="首页" description="功能">
-  <div class="text-red">啊sass啊</div>
+<BaseLayout title="首页" description="功能">
   <Button>按钮</Button>
   <Button status="danger">按钮</Button>
   <Button status="warning">按钮</Button>
   <Button status="success">按钮</Button>
-</MyLayout>
+</BaseLayout>

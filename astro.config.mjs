@@ -15,7 +15,7 @@ export default defineConfig({
   integrations: [
     // https://unocss.dev/integrations/astro
     UnoCSS({
-      injectReset: true // or a path to the reset file
+      injectReset: true, // or a path to the reset file
     }),
     preact({
       include: ["**/preact/**/*"],

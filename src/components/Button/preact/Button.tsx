@@ -15,13 +15,12 @@ const Button: FC<ButtonProps> = (props) => {
 			'default': 'text-white',
 		},
 		{
-			'danger': 'bg-danger hover:bg-danger/80',
+			'danger': 'bg-danger',
 			'warning': 'bg-warning',
 			'success': 'bg-success',
 			'default': 'bg-primary',
 		}
 	]
-
 
 	return (
 		<button class={`h-10 min-w-10 px-4 rounded-md ${statusClass.map(item => item[status]).join(' ')}`}><>{children}</></button>

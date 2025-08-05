@@ -1,0 +1,23 @@
+---
+import type {ThemeType} from '@src/typings'
+import '@src/styles/global.css'
+import '@src/styles/theme.css'
+
+interface Props {
+  title: string;
+  description: string;
+  theme?: ThemeType
+}
+const { title, description, theme='light' } = Astro.props;
+---
+
+<html lang="zh-cn" data-theme={theme}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white dark:bg-black">
+    <slot />
+  </body>
+</html>
