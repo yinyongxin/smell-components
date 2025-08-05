@@ -11,19 +11,7 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
   ],
-  theme: {
-    colors: {
-      // primary: 'var(--color-primary)',
-      // danger: 'var(--color-danger)',
-      // warning: 'var(--color-warning)',
-      // success: 'var(--color-success)',
-      primary: '#3390fa',
-      danger: '#f53d3d',
-      warning: '#ff7b00',
-      success: '#00b32a',
-    },
-
-  },
+  theme: {},
   presets: [
     presetWind3({
     }),
