@@ -13,7 +13,10 @@ import UnoCSS from '@unocss/astro'
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    UnoCSS(),
+    // https://unocss.dev/integrations/astro
+    UnoCSS({
+      injectReset: true // or a path to the reset file
+    }),
     preact({
       include: ["**/preact/*"],
     }),
