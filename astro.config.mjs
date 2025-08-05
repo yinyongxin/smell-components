@@ -8,10 +8,12 @@ import solidJs from "@astrojs/solid-js";
 import vue from "@astrojs/vue";
 // @ts-ignore
 import mdx from "@astrojs/mdx";
+import UnoCSS from '@unocss/astro'
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
+    UnoCSS(),
     preact({
       include: ["**/preact/*"],
     }),
