@@ -1,3 +1,6 @@
-[data-theme="light"] {
-    
+:root {
+  --color-primary: hsl(212, 95%, 59%);
+  --color-danger: hsl(0, 90%, 60%);
+  --color-warning: hsl(29, 100%, 50%);
+  --color-success: hsl(134, 100%, 35%);
 }

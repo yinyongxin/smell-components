@@ -6,15 +6,25 @@ const Button: FC<ButtonProps> = (props) => {
 		children,
 		status = 'default'
 	} = props
-	
-	const textColor: Record<ButtonStatus, string> = {
-		'danger': '',
-		'warning': '',
-		'success': '',
-		'default': 'text-white'
-	}
+
+	const statusClass: Record<ButtonStatus, string>[] = [
+		{
+			'danger': 'text-white',
+			'warning': 'text-white',
+			'success': 'text-white',
+			'default': 'text-white',
+		},
+		{
+			'danger': 'bg-danger hover:bg-danger/80',
+			'warning': 'bg-warning',
+			'success': 'bg-success',
+			'default': 'bg-primary',
+		}
+	]
+
+
 	return (
-		<button class={`h-10 min-w-10 px-4 rounded-md ${textColor[status]}`}><>{children}</></button>
+		<button class={`h-10 min-w-10 px-4 rounded-md ${statusClass.map(item => item[status]).join(' ')}`}><>{children}</></button>
 	)
 }
 

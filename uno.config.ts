@@ -11,16 +11,14 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
   ],
-  theme:{
+  theme: {
     colors: {
-      default: '#ffffff',
-      primary: 'hsl(var(--hue, 217) 78% 51%)',
-      secondary: '#ff0000',
-      danger: '#ff0000',
-      warning: '#ffff00',
-      success: '#00ff00',
+      primary: 'var(--color-primary)',
+      danger: 'var(--color-danger)',
+      warning: 'var(--color-warning)',
+      success: 'var(--color-success)',
     },
-    
+
   },
   presets: [
     presetWind3(),
