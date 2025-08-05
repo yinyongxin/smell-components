@@ -9,7 +9,7 @@ interface Props {
   description: string;
   theme?: ThemeType;
 }
-const { title, description, theme = "dark" } = Astro.props;
+const { title, description, theme = "light" } = Astro.props;
 ---
 
 <html lang="zh-cn" data-theme={theme}>
