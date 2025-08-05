@@ -1,11 +1,12 @@
 import type { FC } from "preact/compat"
-import type { ButtonProps, ButtonStatus } from "./types"
+import type { ButtonProps, ButtonStatus } from "../types"
 
 const Button: FC<ButtonProps> = (props) => {
 	const {
 		children,
 		status = 'default'
 	} = props
+	
 	const textColor: Record<ButtonStatus, string> = {
 		'danger': '',
 		'warning': '',
