@@ -1,0 +1,1 @@
+export type Status  = 'primary' | 'secondary' | 'danger' | 'warning' | 'success' | 'default'

@@ -18,10 +18,10 @@ export default defineConfig({
       injectReset: true // or a path to the reset file
     }),
     preact({
-      include: ["**/preact/*"],
+      include: ["**/preact/**/*"],
     }),
     solidJs({
-      include: ["**/solid/*"],
+      include: ["**/solid/**/*"],
     }),
     vue(),
     mdx(),

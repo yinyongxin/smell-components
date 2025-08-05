@@ -1,7 +1,9 @@
 ---
+import Button from "@components/preact/Button/Button";
 import MyLayout from "@layouts/MyLayout.astro";
 ---
 
 <MyLayout title="首页" description="功能">
     <div class="text-red">Astro Home</div>
+    <Button client:load>按钮</Button>
 </MyLayout>
