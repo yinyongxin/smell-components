@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import TopNavBar from "@components/preact/TopNavBar.tsx";
-import ModeToggle from "@src/components/react/ModeToggle.tsx";
+import ModeToggleIcon from "@src/components/react/ModeToggleIcon.tsx";
 import LightRays from "@src/components/react/react-bits/LightRays.tsx";
 ---
 
@@ -24,7 +24,7 @@ import LightRays from "@src/components/react/react-bits/LightRays.tsx";
   <div class="absolute inset-0 z-20">
     <header class="py-4">
       <TopNavBar client:only="preact" />
-      <ModeToggle client:load />
+      <ModeToggleIcon client:load />
     </header>
   </div>
 </BaseLayout>
