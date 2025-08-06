@@ -1,18 +1,9 @@
 ---
-import Button from "@src/components/Button/preact/Button";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { toggleTheme } from "@src/utils/theme";
 ---
 
 <BaseLayout title="首页" description="功能">
-  <Button
-    client:load
-    onClick={() => toggleTheme()}
-    className="text-black dark:text-white dark:bg-black"
-  >
-    主题
-  </Button>
-  <Button status="danger">按钮</Button>
-  <Button status="warning">按钮</Button>
-  <Button status="success">按钮</Button>
+  <a href="/copy-components">复制组建</a>
+  <a href="/smell-components">小组建</a>
+  <a href="/test-pages">测试页面</a>
 </BaseLayout>
