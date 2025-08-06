@@ -22,7 +22,7 @@ export default defineConfig({
     solidJs({
       include: ["**/solid/**/*"],
     }),
-    react({ include: ["**/react/**/*"] }),
+    react({ include: ["**/react/**/*", "src/components/ui/**/*"] }),
     vue(),
     mdx(),
   ],

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import TopNavBar from "@components/preact/TopNavBar.tsx";
+import { Button } from "@src/components/ui/button";
 ---
 
 <BaseLayout title="首页" description="功能">
@@ -8,5 +9,6 @@ import TopNavBar from "@components/preact/TopNavBar.tsx";
     <header class="py-4">
       <TopNavBar client:only="preact" />
     </header>
+    <Button> 按钮 </Button>
   </div>
 </BaseLayout>

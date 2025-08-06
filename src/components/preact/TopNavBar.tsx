@@ -62,7 +62,7 @@ const TopNavBar = () => {
           {navList.map((item, index) => {
             return (
               <li
-                class={cn(
+                className={cn(
                   "h-10 px-4 flex justify-center items-center cursor-pointer",
                   {
                     "font-bold": active === index,
