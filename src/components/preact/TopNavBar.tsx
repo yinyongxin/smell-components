@@ -21,14 +21,23 @@ const TopNavBar = () => {
   const ref = useRef<HTMLUListElement>(null)
   const checkRef = useRef<HTMLDivElement>(null)
 
-  useLayoutEffect(() => {
+  const setPosition =(index: number) => {
     if (!checkRef.current || !ref.current) {
       return
     }
-    setActive(0)
-    const child = ref.current.children[0]
+    const child = ref.current.children[index]
+    const left = [...ref.current.children].filter((fItem, fIndex) => {
+      return fIndex < index
+    }).map(mItem => {
+      return mItem.clientWidth + 8
+    }).reduce((a, b) => a + b, 0)
     checkRef.current.style.width = child.clientWidth + 'px'
     checkRef.current.style.height = child.clientHeight + 'px'
+    checkRef.current.style.left = left + 8 + 'px'
+  }
+
+  useLayoutEffect(() => {
+    setPosition(0)
   }, [])
 
   return (
@@ -38,18 +47,7 @@ const TopNavBar = () => {
           <div className="size-full bg-gray-100 backdrop-blur rounded-full"></div>
         </div>
         <ul className="relative p-2 flex gap-2 " ref={ref} onMouseLeave={() => {
-          if (!checkRef.current || !ref.current) {
-            return
-          }
-          const child = ref.current.children[active]
-          const left = [...ref.current.children].filter((fItem, fIndex) => {
-            return fIndex < active
-          }).map(mItem => {
-            return mItem.clientWidth + 8
-          }).reduce((a, b) => a + b, 0)
-          checkRef.current.style.width = child.clientWidth + 'px'
-          checkRef.current.style.height = child.clientHeight + 'px'
-          checkRef.current.style.left = left + 8 + 'px'
+         setPosition(active)
         }}>
           {navList.map((item, index) => {
             return (
@@ -58,18 +56,7 @@ const TopNavBar = () => {
                   'font-bold': active === index
                 })}
                 onMouseEnter={() => {
-                  if (!checkRef.current || !ref.current) {
-                    return
-                  }
-                  const child = ref.current.children[index]
-                  const left = [...ref.current.children].filter((fItem, fIndex) => {
-                    return fIndex < index
-                  }).map(mItem => {
-                    return mItem.clientWidth + 8
-                  }).reduce((a, b) => a + b, 0)
-                  checkRef.current.style.width = child.clientWidth + 'px'
-                  checkRef.current.style.height = child.clientHeight + 'px'
-                  checkRef.current.style.left = left + 8 + 'px'
+                  setPosition(index)
                 }}
                 onClick={() => {
                   setActive(index)
