@@ -15,11 +15,17 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact({
-    include: ["**/preact/**/*"],
-  }), solidJs({
-    include: ["**/solid/**/*"],
-  }), vue(), mdx(), react()],
+  integrations: [
+    preact({
+      include: ["**/preact/**/*"],
+    }),
+    solidJs({
+      include: ["**/solid/**/*"],
+    }),
+    react({ include: ["**/react/**/*"] }),
+    vue(),
+    mdx(),
+  ],
 
   vite: {
     plugins: [tailwindcss()],
