@@ -42,9 +42,9 @@ const TopNavBar = () => {
 
   return (
     <nav className="flex justify-center">
-      <div className="relative bg-white/80 backdrop-blur rounded-full shadow">
+      <div className="relative bg-white/50 backdrop-blur rounded-full shadow">
         <div ref={checkRef} className="absolute top-2 bottom-2 left-2 transition-all">
-          <div className="size-full bg-gray-100 backdrop-blur rounded-full"></div>
+          <div className="size-full bg-black/10 backdrop-blur rounded-full"></div>
         </div>
         <ul className="relative p-2 flex gap-2 " ref={ref} onMouseLeave={() => {
          setPosition(active)

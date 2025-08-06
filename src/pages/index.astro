@@ -1,8 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import TopNavBar from "@components/preact/TopNavBar.tsx"
+import TopNavBar from "@components/preact/TopNavBar.tsx";
 ---
 
 <BaseLayout title="首页" description="功能">
-  <TopNavBar client:only="preact" />
+  <div>
+    <header class="py-4">
+      <TopNavBar client:only="preact" />
+    </header>
+  </div>
 </BaseLayout>
