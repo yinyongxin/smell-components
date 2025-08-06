@@ -1,3 +1,4 @@
+import { cn } from "@src/utils"
 import { useLayoutEffect, useEffect, useRef, useState } from "preact/hooks"
 
 const TopNavBar = () => {
@@ -32,7 +33,7 @@ const TopNavBar = () => {
 
   return (
     <nav className="flex justify-center">
-      <div className="relative bg-white backdrop-blur rounded-full shadow">
+      <div className="relative bg-white/80 backdrop-blur rounded-full shadow">
         <div ref={checkRef} className="absolute top-2 bottom-2 left-2 transition-all">
           <div className="size-full bg-gray-100 backdrop-blur rounded-full"></div>
         </div>
@@ -53,7 +54,9 @@ const TopNavBar = () => {
           {navList.map((item, index) => {
             return (
               <li
-                class="h-10 px-4 flex justify-center items-center cursor-pointer"
+                class={cn("h-10 px-4 flex justify-center items-center cursor-pointer", {
+                  'font-bold': active === index
+                })}
                 onMouseEnter={() => {
                   if (!checkRef.current || !ref.current) {
                     return
