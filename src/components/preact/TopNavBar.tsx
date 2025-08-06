@@ -1,3 +1,5 @@
+import { useLayoutEffect, useEffect, useRef, useState } from "preact/hooks"
+
 const TopNavBar = () => {
   const navList = [
     {
@@ -5,25 +7,78 @@ const TopNavBar = () => {
       path: '/ui-components'
     },
     {
-      label: 'UI组件',
-      path: '/ui-components'
+      label: '小组件',
+      path: '/smell-components'
     },
     {
-      label: 'UI组件',
-      path: '/ui-components'
+      label: '测试',
+      path: '/test-pages'
     },
   ]
+
+  const [active, setActive] = useState(0)
+  const ref = useRef<HTMLUListElement>(null)
+  const checkRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    if (!checkRef.current || !ref.current) {
+      return
+    }
+    setActive(0)
+    const child = ref.current.children[0]
+    checkRef.current.style.width = child.clientWidth + 'px'
+    checkRef.current.style.height = child.clientHeight + 'px'
+  }, [])
+
   return (
     <nav className="flex justify-center">
-      <ul className="flex gap-6">
-        {navList.map(item => {
-          return (
-            <li>
-              <a href={item.path} class="h-12 px-12 flex justify-center items-center bg-white/50 blur-4 rounded-full">{item.label}</a>
-            </li>
-          )
-        })}
-      </ul>
+      <div className="relative bg-white backdrop-blur rounded-full shadow">
+        <div ref={checkRef} className="absolute top-2 bottom-2 left-2 transition-all">
+          <div className="size-full bg-gray-100 backdrop-blur rounded-full"></div>
+        </div>
+        <ul className="relative p-2 flex gap-2 " ref={ref} onMouseLeave={() => {
+          if (!checkRef.current || !ref.current) {
+            return
+          }
+          const child = ref.current.children[active]
+          const left = [...ref.current.children].filter((fItem, fIndex) => {
+            return fIndex < active
+          }).map(mItem => {
+            return mItem.clientWidth + 8
+          }).reduce((a, b) => a + b, 0)
+          checkRef.current.style.width = child.clientWidth + 'px'
+          checkRef.current.style.height = child.clientHeight + 'px'
+          checkRef.current.style.left = left + 8 + 'px'
+        }}>
+          {navList.map((item, index) => {
+            return (
+              <li
+                class="h-10 px-4 flex justify-center items-center cursor-pointer"
+                onMouseEnter={() => {
+                  if (!checkRef.current || !ref.current) {
+                    return
+                  }
+                  const child = ref.current.children[index]
+                  const left = [...ref.current.children].filter((fItem, fIndex) => {
+                    return fIndex < index
+                  }).map(mItem => {
+                    return mItem.clientWidth + 8
+                  }).reduce((a, b) => a + b, 0)
+                  checkRef.current.style.width = child.clientWidth + 'px'
+                  checkRef.current.style.height = child.clientHeight + 'px'
+                  checkRef.current.style.left = left + 8 + 'px'
+                }}
+                onClick={() => {
+                  setActive(index)
+                }}
+              >
+                {item.label}
+              </li>
+            )
+          })}
+        </ul>
+
+      </div>
     </nav>
   )
 }
