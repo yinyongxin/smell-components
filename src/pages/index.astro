@@ -2,13 +2,29 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import TopNavBar from "@components/preact/TopNavBar.tsx";
 import ModeToggle from "@src/components/react/ModeToggle.tsx";
+import LightRays from "@src/components/react/react-bits/LightRays.tsx";
 ---
 
 <BaseLayout title="首页" description="功能">
-  <div>
+  <div class="absolute inset-0 z-10 bg-gradient-to-b from-gray-900 to-black">
+    <LightRays
+      client:load
+      raysOrigin="top-center"
+      raysColor="#ffffff"
+      raysSpeed={1.5}
+      lightSpread={0.8}
+      rayLength={1.2}
+      followMouse={true}
+      mouseInfluence={0.1}
+      noiseAmount={0.1}
+      distortion={0.05}
+      className="custom-rays"
+    />
+  </div>
+  <div class="absolute inset-0 z-20">
     <header class="py-4">
       <TopNavBar client:only="preact" />
+      <ModeToggle client:load />
     </header>
-    <ModeToggle client:load />
   </div>
 </BaseLayout>
