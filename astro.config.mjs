@@ -11,18 +11,15 @@ import mdx from "@astrojs/mdx";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    preact({
-      include: ["**/preact/**/*"],
-    }),
-    solidJs({
-      include: ["**/solid/**/*"],
-    }),
-    vue(),
-    mdx(),
-  ],
+  integrations: [preact({
+    include: ["**/preact/**/*"],
+  }), solidJs({
+    include: ["**/solid/**/*"],
+  }), vue(), mdx(), react()],
 
   vite: {
     plugins: [tailwindcss()],

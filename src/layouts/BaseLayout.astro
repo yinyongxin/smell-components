@@ -15,10 +15,13 @@ const { title, description, theme = "light" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover"
+    />
     <title>{title}</title>
   </head>
-  <body class="bg-red-50 dark:bg-gray-900">
+  <body class="bg-gray-50 dark:bg-gray-900">
     <slot />
   </body>
 </html>

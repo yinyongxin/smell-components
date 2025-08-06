@@ -3,15 +3,14 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "jsx": "preserve",
-    // "jsxImportSource": "solid-js",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"]
     },
-    // https://docs.astro.build/zh-cn/guides/typescript/#%E7%B1%BB%E5%9E%8B%E5%AF%BC%E5%85%A5
     "verbatimModuleSyntax": true,
     "plugins": [
       {
