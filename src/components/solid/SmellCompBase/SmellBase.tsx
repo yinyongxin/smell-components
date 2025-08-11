@@ -1,0 +1,4 @@
+type SmellComp
+const SmellCompBase = () => {
+
+}
